@@ -1,4 +1,6 @@
-﻿using System.ComponentModel;
+﻿using Microsoft.AspNetCore.Mvc.ModelBinding.Validation;
+using System.ComponentModel;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Resturant_E_Commerce.Models
 {
@@ -9,9 +11,15 @@ namespace Resturant_E_Commerce.Models
         public string Description { get; set; }
         public decimal Price { get; set; }
         public int Stock { get; set; }
+        [NotMapped]
+        public IFormFile? ImageFile { get; set; }
+        public string ImageUrl { get; set; } = "https://via.placehoder.com/150";
         public int CategoryId { get; set; }
+        [ValidateNever]
         public Category? Category { get; set; }
+        [ValidateNever]
         public ICollection<OrderItem> OrderItems { get; set; }
+        [ValidateNever]
         public ICollection<ProductIngredient> ProductIngredients { get; set; }
     }
 }
