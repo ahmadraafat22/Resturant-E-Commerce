@@ -1,4 +1,4 @@
-html {
+﻿html {
   font-size: 14px;
 }
 
@@ -25,3 +25,104 @@ fixed-image-hight{
     object-fit:cover;
     width:100%;
 }
+/*                                                            added                   */
+/* إعادة ضبط بعض الخصائص الافتراضية للمتصفح */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* تنسيق القسم الأساسي */
+section {
+    padding: 40px;
+    background-color: #f9f9f9; /* خلفية فاتحة للتمييز */
+    font-family: Arial, sans-serif;
+}
+
+/* الحاوية الرئيسية */
+.container {
+    max-width: 1200px; /* تحديد عرض أقصى */
+    margin: 0 auto; /* توسيط المحتوى */
+    text-align: center;
+}
+
+    /* عنوان القسم */
+    .container h2 {
+        font-size: 2rem;
+        margin-bottom: 10px;
+        color: #333;
+    }
+
+/* الخط الفاصل تحت العنوان */
+.line {
+    width: 60px;
+    height: 4px;
+    background-color: #4CAF50; /* لون أخضر */
+    margin: 0 auto 30px auto; /* توسيط مع مسافة تحت */
+    border-radius: 2px;
+}
+
+/* الحاوية التي تحتوي على الكروت */
+.cards {
+    display: flex; /* عرض الكروت بجانب بعض */
+    justify-content: center; /* توسيط الكروت */
+    gap: 20px; /* مسافة بين الكروت */
+    flex-wrap: wrap; /* السماح بالنزول لسطر جديد عند صغر الشاشة */
+}
+
+/* الكرت الواحد */
+.card {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1); /* ظل خفيف */
+    overflow: hidden; /* إخفاء أي محتوى خارج الحدود */
+    width: 300px; /* عرض ثابت للكرت */
+    transition: transform 0.3s ease; /* حركة عند المرور */
+}
+
+    /* تأثير عند المرور بالماوس */
+    .card:hover {
+        transform: translateY(-5px); /* رفع الكرت قليلاً */
+    }
+
+/* صورة الكرت */
+.card-img img {
+    width: 100%; /* تجعل الصورة بعرض الكرت */
+    height: 200px; /* ارتفاع ثابت */
+    object-fit: cover; /* قص الصورة لتناسب */
+}
+
+/* معلومات الكرت */
+.card-info {
+    padding: 15px;
+    text-align: center; /* محاذاة النص لليسار */
+}
+
+    /* عنوان البوست */
+    .card-info h3 {
+        font-size: 1.2rem;
+        margin-bottom: 10px;
+        color: #333;
+    }
+
+    /* النص الوصفي */
+    .card-info span {
+        display: block;
+        margin-bottom: 15px;
+        color: #666;
+        font-size: 0.9rem;
+    }
+
+    /* رابط "Read More" */
+    .card-info a {
+        text-decoration: none;
+        color: #4CAF50;
+        font-weight: bold;
+        transition: color 0.3s ease;
+    }
+
+        /* تغيير لون الرابط عند المرور */
+        .card-info a:hover {
+            color: #2e7d32;
+        }

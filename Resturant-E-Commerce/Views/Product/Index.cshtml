@@ -5,23 +5,31 @@
 }
 
 <h2>Menu Items</h2>
-
+<div class="line"></div>
 <div class="row">
 	@foreach(var prod in Model)
 	{
-		<div class="col-md-4">
-			<form asp-action="Delete" asp-controller="Product" method="post">
-				<input type="hidden" name="id" value="@prod.ProductId"/>
-				<div class="card" style="width:18rem;">
-					<img src="@Url.Content("~/images/"+prod.ImageUrl)" class="card-img-top fixed-image-hight" alt="@prod.Description" />
-					<div>
-						<h5 class="card-title" >@prod.Name</h5>
-						<p class="card-text">@prod.Description</p>
-						<p class="card-text">@prod.Price.ToString()LE</p>
-						<p class="card-text">Quantity in Stock : @prod.Stock</p>
+		<section class="col-md-4">
+			<div class="container">
+				<form asp-action="Delete" asp-controller="Product" method="post">
+					<input type="hidden" name="id" value="@prod.ProductId" />
+					<div class="cards" style="width:18rem;">
+						<div class="card">
+							<div class="card-img">
+								<img src="@Url.Content("~/images/" + prod.ImageUrl)" class="card-img-top fixed-image-hight" alt="@prod.Description" />
+							</div>
+							<div class="card-info">
+								<h5 class="card-title">@prod.Name</h5>
+								<p class="card-text">@prod.Description</p>
+								<p class="card-text">@prod.Price.ToString()LE</p>
+								<p class="card-text">Quantity in Stock : @prod.Stock</p>
+								<a asp-action="AddEdit" class="btn btn-primary">Edit</a>
+							</div>
+						</div>
 					</div>
-				</div>
-			</form>
-		</div>
+				</form>
+			</div>
+		</section>
 	}
 </div>
+<a asp-action="AddEdit" class="btn btn-primary" >Add Item</a>
